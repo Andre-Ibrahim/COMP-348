@@ -14,6 +14,7 @@ takes_course('40132235', 'comp', '348', 'abae').
 takes_course('40132235', 'comp', '352', 'aa').
 takes_course('40132235', 'comp', '352', 'aaae').
 takes_course('40132235', 'engr', '202', 'aa').
+takes_course('40132235', 'econ', '203', 'ec').
 
 course_schedule('comp', '348', 'ab', 'tue', '1315', '1545').
 course_schedule('comp', '348', 'ab', 'thu', '1315', '1545').
