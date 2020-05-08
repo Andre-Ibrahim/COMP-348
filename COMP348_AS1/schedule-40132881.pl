@@ -23,7 +23,7 @@ course_schedule('comp', '352', 'aaae', 'thu', '1215', '1305').
 course_schedule('engr', '202', 'aa', 'mon', '1145', '1300').
 course_schedule('engr', '202', 'aa', 'wed', '1145', '1300').
 course_schedule('engr', '202', 'ab', 'wed', '1015', '1300').
-
+all_sections(CNAM, CNUM, L) :-
 
 
 
