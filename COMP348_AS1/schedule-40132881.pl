@@ -30,13 +30,13 @@ no duplicates */
 has_taken(S, [CNAM|[CNUM|[SEC|[]]]]) :- takes_course(S, CNAM, CNUM, SEC).
 /* true if student S takes the course CNAM CNUM SEC,
 e.g. takes('4000123', ['comp', '348', 'aa']) */
-has_taken2(S, [CNAM|[CNUM|[]]]) :- ...
+has_taken2(S, [CNAM|[CNUM|[]]]) :- takes_course(S, CNAM, CNUM, _).
 /* true if S takes any sections of the course CNAM CNUM,
 e.g. takes('4000123', ['comp', '348']) */
-all_subjects(S, L) :- ...
+all_subjects(S, L) :-takes_course(S, L, _, _).
 /* L contains all the courses subjects that have been
 taken by student S, i.e. ['comp', 'soen']; no duplicates */
-all_courses(S, L) :- ...
+all_courses(S, L) :- takes_course(S, L). /*No work*/
 /* L contains all the courses that have been taken by
 student S, i.e. all_courses('4000123', L) will result in
 L=[['comp', '348', 'aa'], ['comp', '348', 'ab']] */
@@ -44,4 +44,6 @@ all_courses2(S, L) :- ...
 /* similar to all_courses but without section info;
 no duplicates */
 
-
+/*
+Need to create list and make sure no dublicaptes 1, 3, 4
+*/
