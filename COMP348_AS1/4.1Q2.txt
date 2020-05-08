@@ -1,0 +1,19 @@
+Query:
+
+?- team(X), member(S, X),
+findall(S, takes_course(S, _, _, _), LL),
+length(LL, NN),
+write(S), write(' has only taken '), write(NN),
+write(' courses and tutorials in summer 2020.'), nl, fail.
+
+
+Output:
+
+40132881 has only taken 5 courses and tutorials in summer 2020.
+40132235 has only taken 6 courses and tutorials in summer 2020.
+false
+
+explanation: 
+
+These numbers are accurate based on the facts in the database.
+
