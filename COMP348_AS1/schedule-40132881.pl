@@ -23,7 +23,7 @@ course_schedule('comp', '352', 'aaae', 'thu', '1215', '1305').
 course_schedule('engr', '202', 'aa', 'mon', '1145', '1300').
 course_schedule('engr', '202', 'aa', 'wed', '1145', '1300').
 course_schedule('engr', '202', 'ab', 'wed', '1015', '1300').
-all_sections(CNAM, CNUM, L) :- takes_course(_, CNAM, CNUM, L).
+all_sections(CNAM, CNUM, L) :- findall( L ,takes_course(_, CNAM, CNUM , L), L).
 /* L contains a list of all sections of course CNAME, CNUM,
 i.e. calling all_sections(_, 'comp', '348', L) will result in L=['aa', 'ab'];
 no duplicates */
