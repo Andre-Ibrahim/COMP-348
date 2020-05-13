@@ -5,10 +5,11 @@
 1.
 _______________________________
 
-2.
+2. 	The variable Bread will be instantiated with the value 'soup'
 _______________________________
 
-3.
+3. 	Error, 
+	a variable cannot be instantiated to another variable
 _______________________________
 
 4.
@@ -17,7 +18,7 @@ _______________________________
 5.
 _______________________________
 
-6.
+6.	X will be instantiated to healthyFood(bread). Y will be instantiated to drink(milk).
 _______________________________
 
 7.
@@ -26,7 +27,8 @@ _______________________________
 8.
 _______________________________
 
-9.
+9.	X will be instantiated to the value l. inside f(), we have t(b, c) and also a t(Z, c). Since the 
+	c mathes in both t(), Z gets instantiated with the value b.
 _______________________________
 
 10.
@@ -35,10 +37,12 @@ _______________________________
 11.
 _______________________________
 
-12.
+12. 	H will be unstantiated to a. T will be instantiated to [b,c]
 _______________________________
 
-13.
+13. 	Error, 
+	The first list has 2 variables while the second list has 3 atoms. There cannot be
+	instantiation between 2 variables and 3 atoms, we would need another variable in the first list.
 _______________________________
 
 14.
@@ -47,7 +51,7 @@ _______________________________
 15.
 _______________________________
 
-16.
+16.	Variable X will be instantiated to s(g). Variable Y will be instantiated to t(k).
 _______________________________
 
 17.
