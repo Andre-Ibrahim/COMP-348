@@ -24,11 +24,8 @@ _______________________________
 	the query manager(X) will be assigned to the variable Y
 _______________________________
 
-<<<<<<< HEAD
-6.	
-=======
 6.	X will be instantiated to healthyFood(bread). Y will be instantiated to drink(milk).
->>>>>>> 7d0f427f74e0809023f29df3f7e6457270f92cfd
+
 _______________________________
 
 7.
@@ -41,12 +38,8 @@ _______________________________
 	X would then be unified with eat([])
 _______________________________
 
-<<<<<<< HEAD
-9.	
-=======
 9.	X will be instantiated to the value l. inside f(), we have t(b, c) and also a t(Z, c). Since the 
 	c mathes in both t(), Z gets instantiated with the value b.
->>>>>>> 7d0f427f74e0809023f29df3f7e6457270f92cfd
 _______________________________
 
 10.	unification,
