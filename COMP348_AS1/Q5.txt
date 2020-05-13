@@ -1,0 +1,5 @@
+Q 5. Compare the result for all_courses('4000123', L) vs. all_courses2(4000123,
+L). Explain the dierence.
+
+all_courses will produce a list with all classes along side with the tutorials. 
+all_courses2 will give a List of all classes without the tutorial sections.
