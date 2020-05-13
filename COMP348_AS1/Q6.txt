@@ -2,7 +2,10 @@
 	Question 6
 ##############################
 
-1.
+1. 	error,
+	there is a syntax error since we cant start a fact with a capital letter since
+	capital letter are saved for variables	
+	
 _______________________________
 
 2.
@@ -11,28 +14,39 @@ _______________________________
 3.
 _______________________________
 
-4.
+4.	no unification,
+	since we are trying ti make X equal to salad and milk at the same time there
+	is no unification
 _______________________________
 
-5.
+5.	unification,
+	the query manager(X) will be assigned to the variable Y
 _______________________________
 
-6.
+6.	
 _______________________________
 
 7.
 _______________________________
 
-8.
+8.	unifaction,
+	since drink(milk) is the second item on the list in the left side
+	it is unifed with the variable Y since Z would be after the second element
+	and there is only two elements Z is unified with [] (empty list)
+	X would then be unified with eat([])
 _______________________________
 
-9.
+9.	
 _______________________________
 
-10.
+10.	unification,
+	french(jean) is unified with A
+	scottish(Joe) is unified with B
 _______________________________
 
-11.
+11.	unification,
+	healthyFood(bread) is unified with X
+	drink(water) is unified with Y
 _______________________________
 
 12.
@@ -41,7 +55,8 @@ _______________________________
 13.
 _______________________________
 
-14.
+14. 	no unifcation,
+	since Y can't be bread and egg at the same time.
 _______________________________
 
 15.
@@ -53,7 +68,8 @@ _______________________________
 17.
 _______________________________
 
-18.
+18.	no unifaction,
+	since b is not in a list it can't be split into a head and tail
 
 
 
