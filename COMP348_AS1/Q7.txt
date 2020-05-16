@@ -3,24 +3,63 @@
 ##############################
 
 1. 	(Alex)
+	This is a ground query.
+	This query  field(hit_transfer,engineering) will unify with field(X, Y) .
+	Variable X will be instantiated to hit_transfer.
+	Variable Y will be instantiated to engineering.
+	This will resolve into 2 goals: course(hit_transfer, Z) and field(Z, engineering).
+	The goal course(hit_transfer, Z) will unify with course(hit_transfer, mechanical).
+	Variable Z will be instantiated to mechanical.
+	The goal field(mechanical, engineering) will get unified with field(mechanical, engineering).
+	The resolution becomes:
+	field(hit_transfer, engineering) :- course(hit_transfer, mechanical), field(mechanical, engineering).
+	This will resolve to true, so the querry will be true.
 _______________________________
 
 2. 	(Andre)
 _______________________________
 
 3. 	(Alex)
+	This is a ground querry.
+	This query  field(computer, literature) will unify with field(X, Y) .
+	Variable X will be instantiated to computer.
+	Variable Y will be instantiated to literature.
+	This will resolve into 2 goals: course(computer, Z) and field(Z, literature).
+	The goal course(computer, Z) will not unify to anything and will resolve to a false.
+	So the result will be false.
 _______________________________
 
 4.	(Andre)
 _______________________________
 
 5.	(Alex)
+	This is a ground querry.
+	The querry student(adrian) will be unified with student(X).
+	Variable X will be instantiated to adrian.
+	This will resolve into 1 goals: student(adrian,_).
+	The goal will unify with student(adrian, web_design).
+	This will resolve to true, so the result will be true.
+	
+	
 _______________________________
 
 6.	(Andre)
 _______________________________
 
 7.	(Alex)
+	This is a non-ground querry.
+	The querry student(X, enginnering) will be unified with student(X, Y).
+	Variable Y will be instantiated to enginnering.
+	This will resolve into 2 goals: field(Z, enginnering) and student(X, Z).
+	The goal field(Z, enginnering) will unify with field(X, Y).
+	The variable Z will be instantiated to hit_transfer and web_design since there
+	is two enginnering, mechanical and computer.
+	So Y will be instantiated to instantiated to hit_transfer and in another call to web_design.
+	student(X, hit_transfer) will unify with student(anna, hit_transfer) and student(daniel, hit_transfer).
+	X will be instantiated to anna and daniel.
+	student(X, web_design) will unify with student(adrian, web_design).
+	X will be instantiated to adiran. 
+	So the querry will produce the output: X = anna, X = daniel, X = adrian
 _______________________________
 
 8.	(Andre)

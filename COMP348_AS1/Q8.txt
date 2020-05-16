@@ -1,0 +1,52 @@
+##############################
+	Question 7
+##############################
+
+part 1) magic(Hermione).
+	The querry magic(Hermione) will be unified with magic(X).
+	This will resolve into 1 goal: house_elf(X).
+	The goal house_elf(X) will unify with house_elf(dobby).
+	X will be instantiated to dobby.
+	Hermione will be instantiated to dobby.
+	Prolog will backtrack and The querry magic(Hermione) will be unified with magic(X).
+	This will resolve into 1 goal: wizard(X).
+	The goal wizard(X) will unify with wizzard(dobby).
+	X will be instantiated to dobby.
+	Hermione will be instantiated to dobby.
+	Prolog will backtrack and The querry magic(Hermione) will be unified with magic(X).
+	This will resolve into 1 goal: witch(X).
+	The goal witch(X) will unify with witch(hermione).
+	X will be instantiated to hermione.
+	Hermione will be instantiated to hermione.
+	Prolog will backtrack and the goal witch(X) will unify with witch(mcGonagall).
+	X will be instantiated to mcGonagall.
+	Hermione will be instantiated to mcGonagall.
+	Prolog will backtrack and The goal witch(X) will unify with witch(rita_skeeter).
+	X will be instantiated to rita_skeeter.
+	Hermione will be instantiated to rita_skeeter.
+	So this querry will have these reolves:
+	Hermione = dobby, Hermione = dobby, Hermione = hermione, Hermione = mcGonagall, Hermione = rita_skeeter
+	
+part 2) magic(hermione).
+	The querry magic(hermione) will be unified with magic(X).
+	X will be instantiated to hermione.
+	This will resolve into 1 goal: house_elf(X).
+	X will be instantiated to hermione.
+	house_elf(hermione) will not unify to anytihng so it will resolve to false.
+	Prolog will backtrack to magic(hermione).
+	magic(hermione) will be unified with magic(X).
+	X will be instantiated to hermione.
+	This will resolve into 1 goal: wizard(X).
+	X will be instantiated to hermione.
+	wizzard(hermione) will not unify to anytihng so it will resolve to false.
+	Prolog will backtrack to magic(hermione).
+	magic(hermione) will be unified with magic(X).
+	X will be instantiated to hermione.
+	This will resolve into 1 goal: wotch(X).
+	X will be instantiated to hermione.
+	witch(hermione) will unify with witch(hermione).
+	This will resolve to true. So the querry will come back true.
+
+
+	
+	
