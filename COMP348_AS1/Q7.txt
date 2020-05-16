@@ -6,18 +6,42 @@
 _______________________________
 
 2. 	(Andre)
+	Non ground-query
+	lab_number(fine_arts, X) is unifed with lab_number(fine_arts,10).
+	X is instanciated to 10
 _______________________________
 
 3. 	(Alex)
 _______________________________
 
 4.	(Andre)
+	Non ground query
+	course(X,Y) unifes with all procedures course in the database one by one
+	X is intanciated with hit_transfer, Y is intanciated with mechanical
+	X is intanciated with web_design, Y is intanciated with computer
+	X is intanciated with design_methods, Y is intanciated with fine-arts
+	X is intanciated with poetry, Y is intanciated with literature
+	X is intanciated with leadership, Y is intanciated with management
+	X is intanciated with biology, Y is intanciated with medicin
+	
+	
 _______________________________
 
 5.	(Alex)
 _______________________________
 
 6.	(Andre)
+	ground query
+	the query is unifed with  student(X, Y) in the database
+	where X is intanciated with anna and Y with enginnering
+	This will resolve into two goals field(Z, enginnering) and student(anna, Z)
+	field unifes with filed(mechanical, enginnering) and Z is intanciated
+	new that Z is instantiated student(anna, mechanical) is unifed with student(X, Y)
+	where X is intanciated with anna and Y with mechanical
+	This will resolve into two goals field(Z, mechanical) and student(anna, Z)
+	field unifes with filed(mechanical, enginnering) and Z is intanciated
+	
+	through the rule Y is passed to fiked
 _______________________________
 
 7.	(Alex)
