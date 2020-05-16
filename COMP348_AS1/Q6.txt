@@ -11,8 +11,8 @@ _______________________________
 2. 	The variable Bread will be instantiated with the value 'soup'
 _______________________________
 
-3. 	Error, 
-	a variable cannot be instantiated to another variable
+3. 	unification, 
+	Bread will carry whatever value Soup was carrying.
 _______________________________
 
 4.	no unification,
@@ -28,14 +28,19 @@ _______________________________
 
 _______________________________
 
-7.
+7.	no unification,
+	cannot assign a list of elements to a value
+	Z can find a match with the database
+	but then we will have value = list which
+	wouldn't work since a list can't be stored in a value
+	
 _______________________________
 
 8.	unifaction,
 	since drink(milk) is the second item on the list in the left side
-	it is unifed with the variable Y since Z would be after the second element
-	and there is only two elements Z is unified with [] (empty list)
-	X would then be unified with eat([])
+	it instanciates the variable Y since Z would be after the second element
+	and there is only two elements Z is instanciated with [] (empty list)
+	X would then be instanciated with eat([])
 _______________________________
 
 9.	X will be instantiated to the value l. inside f(), we have t(b, c) and also a t(Z, c). Since the 
@@ -43,13 +48,13 @@ _______________________________
 _______________________________
 
 10.	unification,
-	french(jean) is unified with A
-	scottish(Joe) is unified with B
+	french(jean) instanciates with A
+	scottish(Joe) instanciates with B
 _______________________________
 
 11.	unification,
-	healthyFood(bread) is unified with X
-	drink(water) is unified with Y
+	healthyFood(bread) instanciates with X
+	drink(water) instanciates with Y
 _______________________________
 
 12. 	H will be unstantiated to a. T will be instantiated to [b,c]
@@ -64,13 +69,18 @@ _______________________________
 	since Y can't be bread and egg at the same time.
 _______________________________
 
-15.
+15.	unification,
+	Evening is unifed with Time
+	X is instanciated with jack
+	Y is insatnciated with cook(egg, oil) 
 _______________________________
 
 16.	Variable X will be instantiated to s(g). Variable Y will be instantiated to t(k).
 _______________________________
 
-17.
+17.	no unification,
+	there are two instances of the the variable D on the right hand side
+	but on the left hand side there is two different values in these positions
 _______________________________
 
 18.	no unifaction,
