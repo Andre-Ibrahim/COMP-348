@@ -2,5 +2,10 @@ Q 5. Compare the result for all_courses2('4000123', L) vs. all_courses2(4000123,
 L). Explain the dierence.
 
 
-all_courses will produce a list with all classes along side with the tutorials. 
-all_courses2 will give a List of all classes without the tutorial sections.
+If something is put inside of quatation marks, that means we need to treat that specific thing like an atom. 
+In our prolog database, the student ID is put in quatation to make it an atom and not a variable. So that means that
+in our querry we need to call all_courses with an atom as our first element. all_courses('4000123', L) does in fact use
+an atom as the first element and therefore will produce a list with all courrses taken by the person with that student Id.
+all_courses2(4000123,L) on the other hand passses a variable as the first element, not an atom. For this reason, 
+it will not unify with any of the facts since takes_course does not take a variable as there first element.
+
