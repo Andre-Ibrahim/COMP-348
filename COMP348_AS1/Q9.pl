@@ -40,13 +40,53 @@ dateofbirth(person(_, _, Date, _), Date).
 salary(person(_, _, _, works(_, S)), S).
 salary(person(_, _, _, unemployed), 0).
 
-parent_income(family(X, Y, _), I):- salary(X, I1), salary(Y, I2), I is I1 + I2.
 list_person_to_income([], 0).
 list_person_to_income([H|T], I):- salary(H, N), list_person_to_income(T, R), I is R + N.
-totalIncome(family(X,Y,L), Tot):- parent_income(family(X, Y, _), I1), list_person_to_income(L, I2), Tot is I1 + I2.
+
+totalIncome(family(X,Y, L), Tot):- R = [X|[Y|L]], list_person_to_income(R, Tot).
+
+get_LastName(person(_, Y, _,_), Y).
+
+less_than2k([]).
+less_than2k([H|T]):- salary(H, S), S < 2000, less_than2k(T). 
+
+
 /* 	b)
 	family(X, Y, L),
 	totalIncome(family(X, Y, L), I),
+	get_LastName(X, Z),
+	write('The '),
+	write(Z),
+	write(' family makes '),
 	write(I),
+	write(' dollars'),
 	nl,
 	fail.	*/
+
+/*	c)
+	family(X, Y, Z),
+	L = [X|[Y|Z]],
+	less_than2k(L),
+	get_LastName(X, Last),
+	write('the family '),write(Last), write('makes less than 2000 dollars per person'),nl,
+	write(X),nl,
+	write(Y),nl,
+	write(Z),nl,
+	fail.
+
+*/
+
+/*	d)
+	family(X, Y, Z),
+	list_person_to_income(Z, Kids),
+	list_person_to_income([X, Y], Parents), 
+	Kids > Parents,
+	get_LastName(X, L),
+	write("In the family "), write(L), write(" the children make more than the parents"),nl,
+	write('Father: '),write(X),nl,
+	write('Mother: '),write(Y),nl,
+	write('Children: '),write(Z),nl,
+	fail.
+
+
+*/
