@@ -65,9 +65,9 @@ _______________________________
 	new that Z is instantiated student(anna, mechanical) is unifed with student(X, Y)
 	where X is intanciated with anna and Y with mechanical
 	This will resolve into two goals field(Z, mechanical) and student(anna, Z)
-	field unifes with filed(mechanical, enginnering) and Z is intanciated
+	field unifes with filed(mechanical, enginnering) and Z is intanciated with mechanical
+	student(anna, mechanical) is then unified with student(X, Y) where X is instanciated with anna and Y with mechanical
 	
-	through the rule Y is passed to fiked
 _______________________________
 
 7.	(Alex)
@@ -99,6 +99,9 @@ _______________________________
 _______________________________
 
 12. 	(Andre)
+	student(X) and resolves into student(X,_).
+	the first match is found in the database and X is instantiated
+	then student(anna, _) is unifed with student(anna, hit_transfer)
 _______________________________
 
 13. 	(Alex)
