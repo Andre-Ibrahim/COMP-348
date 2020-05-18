@@ -23,7 +23,7 @@ _______________________________
 _______________________________
 
 3. 	(Alex)
-	This is a ground querry.
+	This is a ground query.
 	This query  field(computer, literature) will unify with field(X, Y) .
 	Variable X will be instantiated to computer.
 	Variable Y will be instantiated to literature.
@@ -46,8 +46,8 @@ _______________________________
 _______________________________
 
 5.	(Alex)
-	This is a ground querry.
-	The querry student(adrian) will be unified with student(X).
+	This is a ground query.
+	The query student(adrian) will be unified with student(X).
 	Variable X will be instantiated to adrian.
 	This will resolve into 1 goals: student(adrian,_).
 	The goal will unify with student(adrian, web_design).
@@ -79,8 +79,8 @@ _______________________________
 _______________________________
 
 7.	(Alex)
-	This is a non-ground querry.
-	The querry student(X, enginnering) will be unified with student(X, Y).
+	This is a non-ground query.
+	The query student(X, enginnering) will be unified with student(X, Y).
 	Variable Y will be instantiated to enginnering.
 	This will resolve into 2 goals: field(Z, enginnering) and student(X, Z).
 	The goal field(Z, enginnering) will unify with field(X, Y).
@@ -91,7 +91,7 @@ _______________________________
 	X will be instantiated to anna and daniel.
 	student(X, web_design) will unify with student(adrian, web_design).
 	X will be instantiated to adiran. 
-	So the querry will produce the output: X = anna, X = daniel, X = adrian
+	So the query will produce the output: X = anna, X = daniel, X = adrian
 _______________________________
 
 8.	(Andre)
@@ -106,8 +106,8 @@ _______________________________
  _______________________________
 
 9.	(Alex)
-	This is a non-ground querry.
-	The querry field(_, X) will unify with field(mechanical, engineering).
+	This is a non-ground query.
+	The query field(_, X) will unify with field(mechanical, engineering).
 	X will be instantiated to engineering.
 	Resolution occurs.
 	The querry field(_, X) will unify with field(computer, engineering).
@@ -127,18 +127,30 @@ _______________________________
 	course will be unified with all courses and Z will be instantiated to all first
 	elements of course. Then Y in field(Z,Y) will also eventually be instantiated to 
 	all values of field which will simply repeat the first part of the answer.
-	So the querry will produce the output: X = engineering,X = engineering, X = art, X = social,
+	So the query will produce the output: X = engineering,X = engineering, X = art, X = social,
 	X = buisiness, X = engineering, X = engineering, X = art, X = social, X = buisiness.	
 	
 	
 _______________________________
 
 10.	(Andre)
+	This is a non-ground query.
+	The query lab_number(_,X) will be unified with lab_number(X,Z).
+	lab_number(X, Z) will resolve into 2 goals: course(X,Y) and lab_number(Y,Z).
+	The goal lab_number(Y,Z) will unify with lab_number(mechanical,15) and lab_number(mechanical,10).
+	Z will be insantiated to 15 and 10 at two separte times.
+	We do not care what the goal course(X,Y) will produce.
+	X from querry will be instantiated to 15 and 10 also.
+	In the querry, field(X,Y) will now be evaluated, keeping in mind the coma means and.
+	field(15, Y) will not be able to unify with anything and will reolve to false.
+	field(10, Y) will not be able to unify with anything and will reolve to false.
+	So the querry will propduce a false and no results will be produced.
+	
 _______________________________
 
 11.	(Alex)
-	This is a non-ground querry.
-	The querry lab_number(X, 15) will be unified with lab_number(mechanical,15).
+	This is a non-ground query.
+	The query lab_number(X, 15) will be unified with lab_number(mechanical,15).
 	X will be instantiated to mechanical.
 	field(mechanical, Y) will be instantiated with field(mechanical,engineering).
 	Y will be instantiated to engineering.
@@ -155,20 +167,78 @@ _______________________________
 	field(hit_transfer, Y) will resolve into course(hit_transfer, Z) and field(Z,Y).
 	Z will be instantiated to mechanical anf Y to enginerring.
 	Resolution occurs.
-	So the querry will produce the output: X = mechanical and Y = engineering, X = hit_transfer and Y = engineering
+	So the query will produce the output: X = mechanical and Y = engineering, X = hit_transfer and Y = engineering
 	
 _______________________________
 
 12. 	(Andre)
+<<<<<<< HEAD
+	This is a non-ground query.
+	the query student(X) will be unified with student(X). 
+	student(X) will resolve into one goal: student(X,_).
+	student(X,_) will unify with student(anna, hit_transfer).
+	X will be instantiated to anna.
+	Resolution occurs.
+	The cut operation is reached, so no more backtracking.
+	Since X is already instantiated to ana, the next operation is student(anna,_).
+	This will get unified to student(X,Y).
+	X will be instantiated with anna, Y to _.
+	This will resolve into field(Z, _) and student(anna,Z).
+	Z will be instantiated to hit_transfer (this happens after field is resolve into 2 
+	course and field).
+	student(anna, hit_transfer) will be unified with student(anna, hit_transfer).
+	Resolution occurs.
+	So the query will produce the output X = anna.
+	
+=======
 	student(X) and resolves into student(X,_).
 	the first match is found in the database and X is instantiated
 	then student(anna, _) is unifed with student(anna, hit_transfer)
+>>>>>>> a1b56bacd122b910a6210ee9340c8a826d3dc6e6
 _______________________________
 
 13. 	(Alex)
+	This is a non-ground query.
+	the query student(X) will be unified with student(X). 
+	student(X) will resolve into one goal: student(X,_).
+	student(X,_) will unify with student(anna, hit_transfer).
+	X will be instantiated to anna.
+	Prolog will backtrack to querry student(X,_).
+	X will be instantiated to anna. 
+	student(anna,_) will be unified with student(anna, hit_transfer).
+	Resolution occurs. 
+	The cut operation is reached, so prolog will exit.
+	So the query will produce the output X = anna.
 _______________________________
 
 14. 	(Andre)
+	This is a non-ground query
+	The query course(X,_) will be unified with course(hit_transfer, mechanical).
+	X will be instantiated to hit_transfer.
+	The query student(_, hit_transfer) will be unified with student(anna, hit_transfer).
+	This will resolve in true. Not true is false so this will resolve into false.
+	The query course(X,_) will be unified with course(web_design,computer).
+	X will be instantiated to web_design.
+	The query student(_, web_design) will be unified with student(adrian, web_design).
+	This will resolve in true. Not true is false so this will resolve into false.
+	The query course(X,_) will be unified with course(design_methods, fine-arts).
+	X will be instantiated to design_methods.
+	The query student(_, design_methods) will be unified with student(ava, design methods).
+	This will resolve in true. Not true is false so this will resolve into false.
+	The query course(X,_) will be unified with course(poetry, literature).
+	X will be instantiated to poetry.
+	The query student(_, poetry) will be unified with student(jack, poetry).
+	This will resolve in true. Not true is false so this will resolve into false.
+	The query course(X,_) will be unified with course(leadership, management).
+	X will be instantiated to leadership.
+	The query student(_, leadership) will be unified with student(lee, leadership).
+	This will resolve in true. Not true is false so this will resolve into false.
+	The query course(X,_) will be unified with course(biology,medicin).
+	X will be instantiated to biology.
+	The query student(_, biology) will not be unified with anything.
+	This will resolve in false. Not false is true so this will resolve into true.
+	So the query will output: X = biology.
+
 
 
 
