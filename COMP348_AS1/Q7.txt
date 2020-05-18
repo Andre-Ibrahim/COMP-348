@@ -65,8 +65,16 @@ _______________________________
 	new that Z is instantiated student(anna, mechanical) is unifed with student(X, Y)
 	where X is intanciated with anna and Y with mechanical
 	This will resolve into two goals field(Z, mechanical) and student(anna, Z)
-	field unifes with filed(mechanical, enginnering) and Z is intanciated with mechanical
-	student(anna, mechanical) is then unified with student(X, Y) where X is instanciated with anna and Y with mechanical
+
+	field(Z, enginnering)  unifes with field(X, Y) and resolves into course(X, Z) and filed(Z, enginnering)
+	filed(Z, enginnering) unifes with filed(mechanical, enginnering) which means Z is instanciated with mechancial
+	course(X, mechanical) is unified with course course(hit_transfer, mechanical)
+	Z from the initial filed call is then insiated with hit_transfer
+	since Z is instantiated to hit_trasfer we have student(anna, hit_transfer)
+	that finds a match in the database which means our query evaluates to true
+	
+
+	
 	
 _______________________________
 
@@ -87,7 +95,15 @@ _______________________________
 _______________________________
 
 8.	(Andre)
-_______________________________
+	Non-ground query
+	student(X, fine-arts) unifes with student(X, Y) where Y is instanciated with fine-arts
+	it is then resolved to filed(Z, fine-arts) and student(X, Z).
+	filed(Z, fine-arts) is unfied with filed(X, Y) and is resolved to course(X, Z) and filed(Z, fine-arts).
+	since filed(_, fine-arts) resolves to a false statement there is no course in the database that meets these goals.
+	this means that student(X, fine-arts) will result into false after exausting the database.
+	
+	
+ _______________________________
 
 9.	(Alex)
 	This is a non-ground querry.
