@@ -65,9 +65,9 @@ _______________________________
 	new that Z is instantiated student(anna, mechanical) is unifed with student(X, Y)
 	where X is intanciated with anna and Y with mechanical
 	This will resolve into two goals field(Z, mechanical) and student(anna, Z)
-	field unifes with filed(mechanical, enginnering) and Z is intanciated
+	field unifes with filed(mechanical, enginnering) and Z is intanciated with mechanical
+	student(anna, mechanical) is then unified with student(X, Y) where X is instanciated with anna and Y with mechanical
 	
-	through the rule Y is passed to fiked
 _______________________________
 
 7.	(Alex)
@@ -156,6 +156,7 @@ _______________________________
 _______________________________
 
 12. 	(Andre)
+<<<<<<< HEAD
 	This is a non-ground query.
 	the query student(X) will be unified with student(X). 
 	student(X) will resolve into one goal: student(X,_).
@@ -173,6 +174,11 @@ _______________________________
 	Resolution occurs.
 	So the query will produce the output X = anna.
 	
+=======
+	student(X) and resolves into student(X,_).
+	the first match is found in the database and X is instantiated
+	then student(anna, _) is unifed with student(anna, hit_transfer)
+>>>>>>> a1b56bacd122b910a6210ee9340c8a826d3dc6e6
 _______________________________
 
 13. 	(Alex)
