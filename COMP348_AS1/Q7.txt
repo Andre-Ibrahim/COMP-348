@@ -90,12 +90,57 @@ _______________________________
 _______________________________
 
 9.	(Alex)
+	This is a non-ground querry.
+	The querry field(_, X) will unify with field(mechanical, engineering).
+	X will be instantiated to engineering.
+	Resolution occurs.
+	The querry field(_, X) will unify with field(computer, engineering).
+	X will be instantiated to engineering.
+	Resolution occurs.
+	The querry field(_, X) will unify with field(fine-arts, art).
+	X will be instantiated to art.
+	Resolution occurs.
+	The querry field(_, X) will unify with field(literature, social).
+	X will be instantiated to social.
+	Resolution occurs.
+	The querry field(_, X) will unify with field(management, buisiness).
+	X will be instantiated to buisiness.
+	Resolution occurs.
+	The querry field(_, X) will unify with field(X, Y).
+	Tis will resolve into 2 goals, course(_,Z) and field(Z,Y).
+	course will be unified with all courses and Z will be instantiated to all first
+	elements of course. Then Y in field(Z,Y) will also eventually be instantiated to 
+	all values of field which will simply repeat the first part of the answer.
+	So the querry will produce the output: X = engineering,X = engineering, X = art, X = social,
+	X = buisiness, X = engineering, X = engineering, X = art, X = social, X = buisiness.	
+	
+	
 _______________________________
 
 10.	(Andre)
 _______________________________
 
 11.	(Alex)
+	This is a non-ground querry.
+	The querry lab_number(X, 15) will be unified with lab_number(mechanical,15).
+	X will be instantiated to mechanical.
+	field(mechanical, Y) will be instantiated with field(mechanical,engineering).
+	Y will be instantiated to engineering.
+	Resolution occurs.
+	The querry lab_number(X, 15) will be unified with lab_number(X,Z).
+	This will resolve into 2 goals: course(X, Y) and course(Y, Z).
+	Z will be instantiated to 15.
+	course(Y,15) will unify with course(mechanical, 15).
+	Y will be instantiated to mechanical.
+	course(X, mechanical) will unify with course(hit_transfer, mechanical).
+	X will be instantiated to hit_transfer.
+	field(hit_transfer, Y) will be instantiated with field(X, Y).
+	X will instantiate to hit_transfer.
+	field(hit_transfer, Y) will resolve into course(hit_transfer, Z) and field(Z,Y).
+	Z will be instantiated to mechanical anf Y to enginerring.
+	Resolution occurs.
+	So the querry will produce the output: X = mechanical and Y = engineering, X = hit_transfer and Y = engineering
+	
 _______________________________
 
 12. 	(Andre)
