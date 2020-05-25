@@ -2,7 +2,7 @@
 	Question 7
 ##############################
 
-1. 	(Alex)
+1. 
 	This is a ground query.
 	This query  field(hit_transfer,engineering) will unify with field(X, Y) .
 	Variable X will be instantiated to hit_transfer.
@@ -16,13 +16,13 @@
 	This will resolve to true, so the querry will be true.
 _______________________________
 
-2. 	(Andre)
+2.
 	Non ground-query
 	lab_number(fine_arts, X) is unifed with lab_number(fine_arts,10).
 	X is instanciated to 10
 _______________________________
 
-3. 	(Alex)
+3.
 	This is a ground query.
 	This query  field(computer, literature) will unify with field(X, Y) .
 	Variable X will be instantiated to computer.
@@ -32,7 +32,7 @@ _______________________________
 	So the result will be false.
 _______________________________
 
-4.	(Andre)
+4.
 	Non ground query
 	course(X,Y) unifes with all procedures course in the database one by one
 	X is intanciated with hit_transfer, Y is intanciated with mechanical
@@ -45,7 +45,7 @@ _______________________________
 	
 _______________________________
 
-5.	(Alex)
+5.
 	This is a ground query.
 	The query student(adrian) will be unified with student(X).
 	Variable X will be instantiated to adrian.
@@ -56,7 +56,7 @@ _______________________________
 	
 _______________________________
 
-6.	(Andre)
+6.
 	ground query
 	the query is unifed with  student(X, Y) in the database
 	where X is intanciated with anna and Y with enginnering
@@ -78,7 +78,7 @@ _______________________________
 	
 _______________________________
 
-7.	(Alex)
+7.
 	This is a non-ground query.
 	The query student(X, enginnering) will be unified with student(X, Y).
 	Variable Y will be instantiated to enginnering.
@@ -94,7 +94,7 @@ _______________________________
 	So the query will produce the output: X = anna, X = daniel, X = adrian
 _______________________________
 
-8.	(Andre)
+8.
 	Non-ground query
 	student(X, fine-arts) unifes with student(X, Y) where Y is instanciated with fine-arts
 	it is then resolved to filed(Z, fine-arts) and student(X, Z).
@@ -105,7 +105,7 @@ _______________________________
 	
  _______________________________
 
-9.	(Alex)
+9.
 	This is a non-ground query.
 	The query field(_, X) will unify with field(mechanical, engineering).
 	X will be instantiated to engineering.
@@ -133,7 +133,7 @@ _______________________________
 	
 _______________________________
 
-10.	(Andre)
+10.
 	This is a non-ground query.
 	The query lab_number(_,X) will be unified with lab_number(X,Z).
 	lab_number(X, Z) will resolve into 2 goals: course(X,Y) and lab_number(Y,Z).
@@ -148,7 +148,7 @@ _______________________________
 	
 _______________________________
 
-11.	(Alex)
+11.
 	This is a non-ground query.
 	The query lab_number(X, 15) will be unified with lab_number(mechanical,15).
 	X will be instantiated to mechanical.
@@ -171,8 +171,8 @@ _______________________________
 	
 _______________________________
 
-12. 	(Andre)
-<<<<<<< HEAD
+12. 
+
 	This is a non-ground query.
 	the query student(X) will be unified with student(X). 
 	student(X) will resolve into one goal: student(X,_).
@@ -190,12 +190,6 @@ _______________________________
 	Resolution occurs.
 	So the query will produce the output X = anna.
 	
-=======
-	student(X) and resolves into student(X,_).
-	the first match is found in the database and X is instantiated
-	then student(anna, _) is unifed with student(anna, hit_transfer)
->>>>>>> a1b56bacd122b910a6210ee9340c8a826d3dc6e6
-_______________________________
 
 13. 	(Alex)
 	This is a non-ground query.
@@ -211,7 +205,7 @@ _______________________________
 	So the query will produce the output X = anna.
 _______________________________
 
-14. 	(Andre)
+14. 
 	This is a non-ground query
 	The query course(X,_) will be unified with course(hit_transfer, mechanical).
 	X will be instantiated to hit_transfer.
