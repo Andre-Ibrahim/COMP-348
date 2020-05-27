@@ -1,7 +1,12 @@
 
+
+
+
+
 (defun collatz (n)
-(setq a n)
+(setq a (car n))
 (setq li (list a))
+
 (loop 
     (if (oddp a) 
         (setq a (+ (* a 3) 1))
@@ -13,7 +18,7 @@
 (cdr li)
 )
 
-(print (collatz 30))
+(print (collatz '(30)))
 
 
 
@@ -21,7 +26,7 @@
     (setq b 0)
     (loop 
         (setq b (+ b 1))
-        (print (collatz b))
+        (print (collatz (list b)))
         
    (when (> b n) (return b))
 )
@@ -29,3 +34,5 @@
 )
 
 (print (collatz2 20))
+
+
