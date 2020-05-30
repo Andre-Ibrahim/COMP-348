@@ -8,6 +8,8 @@
 (setq li (list a))
 
 (loop 
+    (when (or (not (integerp a)) (not (plusp a)) (zerop a)) 
+    (format t "Error, please enter valid number") (return nil))
     (if (oddp a) 
         (setq a (+ (* a 3) 1))
         (setq a (/ a 2))
