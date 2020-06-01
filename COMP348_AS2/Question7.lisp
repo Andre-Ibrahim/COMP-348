@@ -1,12 +1,9 @@
 
 
 
-
-
 (defun collatz (n)
 (setq a (car n))
 (setq li (list a))
-
 (loop 
     (when (or (not (integerp a)) (not (plusp a)) (zerop a)) 
     (format t "Error, please enter valid number") (return nil))
@@ -16,11 +13,12 @@
     )
    (setq li (append li (list a)))
    (when (< a 2) (return a))
+   
 )
 (cdr li)
 )
 
-(print (collatz '(30)))
+(print (collatz '(47)))
 
 
 
@@ -30,11 +28,11 @@
         (setq b (+ b 1))
         (print (collatz (list b)))
         
-   (when (> b n) (return b))
+   (when (>= b n) (return b))
 )
 
 )
 
-(print (collatz2 20))
+ (collatz2 20)
 
 
