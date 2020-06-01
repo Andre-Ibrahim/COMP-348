@@ -20,7 +20,7 @@
 
 
 
-(defun reverse-cut-in-half (list)
+(defun reverse-cut-in-half (list); method from Q2 with minor modifications
     (setq y '())
     (setq x '())
     
@@ -48,9 +48,9 @@
     
     (setq len (length lst))
     (dotimes (i len)
-        (if (equal i (floor(/ len 2)))
-        ()
-            (if (< i (floor(/ len 2)))
+        (if (equal i (floor(/ len 2)));since it's odd, the middle element will
+        ();Be ignored
+            (if (< i (floor(/ len 2)));else it will do reverse method
             (setq y (append  y (list(car lst)) ))  
             (setq x (append  x  (list(car lst))))
                   
@@ -58,11 +58,11 @@
         )
         
 
-        (setq lst (cdr lst))
+        (setq lst (cdr lst));shortens list
     )
-    (setq s1 (length (flatten x)))
+    (setq s1 (length (flatten x)));calls flatten method from q3
     (setq s2 (length (flatten y)))
-    (equalp s1 s2)
+    (equalp s1 s2);returns true if length is equal
 )
 
 
@@ -70,21 +70,23 @@
 (defun balancedp (lst)
     (setq x '())
     (setq y '())
-    (setq len (length lst))
-    (cond (
-        (oddp len)
-        (shorten-list lst)
+    (setq len (length lst));sets length of string to len
+    (cond (; condition
+        (oddp len);if length is odd
+        (shorten-list lst); call specific method
         )
         (
-        t
-        (reverse-cut-in-half lst)
+        t;else
+        (reverse-cut-in-half lst);using method from question 4
         )
     )
 
 
 )
 
-(print(balancedp '((1 2) (4 6) 5 7 6 (3 6 4))))
-
+(print(balancedp '((1 2) (6 6) 5 7 6 (3 6 4))))
+(print(balancedp '((1 2) (4 6) 5 6 (3 6 4))))
+(print(balancedp '((b 2) (4 6) 5 7 6 (3 (6) 7 4))))
+(print(balancedp '((1 2) (c 6) (6) a (3 6 4))))
 
 
