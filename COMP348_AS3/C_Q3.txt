@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 typedef struct {
     char * title;
@@ -7,7 +8,10 @@ typedef struct {
 Display(Book arr[], int size);
 
 
+
 float AverageBookPrice(Book arr[], int size);
+
+void Add(Book * arr, int * size);
 
 int main(){
     int x;
@@ -33,6 +37,11 @@ int main(){
     float avg = AverageBookPrice(arr, x);
     printf("The average price is %.2f$", avg);
     
+    Add(arr,&x);
+    
+    Display(arr, x);
+    
+    
     return 0;
     
 }
@@ -52,3 +61,37 @@ float AverageBookPrice(Book arr[], int size){
         average += arr[i].price;
     return average/size;
 }
+void Add(Book * arr, int * size){
+    
+    char * title;
+    float price;
+    printf("\nwhat is the title of the book: "); // prompting user for a title
+    scanf("%s", &title);
+    printf("what is the price of the book: ");
+    scanf("%f", &price);
+    
+    Book * newarr = (Book *) malloc((*size + 1) * sizeof(Book) ); // new array with size incermented by 1
+    
+
+    for(int i = 0; i < *size; i++){ // copying content of the array
+        Book temp1 = *(arr + i);
+        (newarr)[i] = temp1;
+        
+    }
+        
+        
+    Book temp = {&title, price}; //value of the added Book in a temp vairable
+
+    (arr)[*size] = temp;
+    
+    
+
+    arr = newarr; // passing the address of the new array to the one that we wanted to modify
+    
+    *size = *size + 1; // incrementing the size of the array by reference
+    
+    free(newarr); // 
+    
+}
+
+
