@@ -1,0 +1,54 @@
+#include <stdio.h>
+typedef struct {
+    char * title;
+    float price;
+}Book;
+
+Display(Book arr[], int size);
+
+
+float AverageBookPrice(Book arr[], int size);
+
+int main(){
+    int x;
+    printf("how many books do you want to add: ");
+    scanf("%d", &x);
+    
+    Book arr[x];
+    char * title;
+    float price;
+    
+    for(int i = 0; i < x; i++){
+        printf("what is the title of book %d: ", (i+1));
+        scanf("%s", &title);
+        printf("what is the price of book %d: ", (i+1));
+        scanf("%f", &price);
+        
+        
+        Book temp = {&title, price};
+        arr[i] = temp;
+    }
+    Display(arr, x);
+    
+    float avg = AverageBookPrice(arr, x);
+    printf("The average price is %.2f$", avg);
+    
+    return 0;
+    
+}
+
+
+Display(Book * arr, int size){
+    for(int i = 0; i < size; i++){
+        printf("Book %d ", (i + 1));
+        printf("title: %s ", (arr + i)->title);
+        printf("price: %.2f$\n", (arr + i)->price);
+    }
+}
+
+float AverageBookPrice(Book arr[], int size){
+    float average = 0;
+    for(int i = 0; i < size; i++)
+        average += arr[i].price;
+    return average/size;
+}

@@ -28,7 +28,7 @@
 
 (defvar isBT t) ; does not overide the existing value so when setq puts the variable to nill it can't change it
 
-(print (car Tree)) ; test to see the iterations of the nodes in the tree
+;(print (car Tree)) ; test to see the iterations of the nodes in the tree
 (cond 
     ( (hasLeft Tree)
 
@@ -62,4 +62,4 @@ isBT ; returning the value isBT at the end
 
 (print (isBinaryTree '(8 (3 (1 () ()) (6 (4 () ())(7 () ()))) (10 () (13 (12) ()))))) ;test case
 
-
+(print (isBinaryTree '(8 (9 (1 () ()) (6 (4 () ())(7 () ()))) (10 () (13 (12) ())))))

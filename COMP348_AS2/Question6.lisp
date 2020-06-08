@@ -33,4 +33,12 @@
 
 )
 
-(triangle -5)
+(triangle -2)
+
+
+(terpri); newline
+
+
+
+
+

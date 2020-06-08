@@ -53,7 +53,7 @@
         
 
 (print (flatten '(1 3 ((4 1) a 5.6))))        
-(print (flatten '(1 2 (3 1) (a 2.5) (2 4.5) ((1 2)))))
+(print (flatten '(1 2 (3 1) (a 2.5) (2 4.5) ((b 1 c 2 e)))))
 
 
 
