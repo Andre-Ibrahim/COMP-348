@@ -74,7 +74,7 @@ class Ellipse < Shape
         super()
         if a<0 || b<0 then
             puts "Error, Invalid elipse"
-            exit(1)
+            #exit(1)
         end 
         @a = a
         @b = b

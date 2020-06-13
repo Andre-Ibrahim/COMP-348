@@ -5,7 +5,7 @@ numShapes=0
 numCircles=0
 numRectangles=0
 numEllipses=0
-Statistics = { "Shape" => numShapes, "Circle" => numCircles, "Rectangles" => numRectangles, "Ellipses" => numEllipses }
+statistics = { "Shape" => numShapes, "Circle" => numCircles, "Rectangles" => numRectangles, "Ellipses" => numEllipses }
 
 for i in 0...words.length()
 
@@ -16,22 +16,34 @@ for i in 0...words.length()
             statistics["Shape"] = statistics["Shape"]+1
         end
         if(words[i].eql?("rectangle"))
-            r = Rectangle.new(words[i+1].to_i, words[i+2].to_i)
-            r.print
-            statistics["Rectangles"]= statistics["Rectangles"]+1
-            statistics["Shape"] = statistics["Shape"]+1
+            if (words[i+1].to_i>=0 && words[i+2].to_i>=0)
+                r = Rectangle.new(words[i+1].to_i, words[i+2].to_i)
+                r.print
+                statistics["Rectangles"]= statistics["Rectangles"]+1
+                statistics["Shape"] = statistics["Shape"]+1
+            else 
+                puts "Error: Invalid Rectangle"
+            end     
         end
         if(words[i].eql?("ellipse"))
-            e = Ellipse.new(words[i+1].to_i, words[i+2].to_i)
-            e.print
-            statistics["Ellipses"]= statistics["Ellipses"]+1
-            statistics["Shape"] = statistics["Shape"]+1
+            if (words[i+1].to_i>=0 && words[i+2].to_i>=0)
+                e = Ellipse.new(words[i+1].to_i, words[i+2].to_i)
+                e.print
+                statistics["Ellipses"]= statistics["Ellipses"]+1
+                statistics["Shape"] = statistics["Shape"]+1
+            else 
+                puts "Error: Invalid Ellipse"
+            end    
         end
         if(words[i].eql?("circle"))
-            c = Circle.new(words[i+1].to_i)
-            c.print
-            statistics["Circle"]= statistics["Circle"]+1
-            statistics["Shape"] = statistics["Shape"]+1
+            if (words[i+1].to_i>=0)
+                c = Circle.new(words[i+1].to_i)
+                c.print
+                statistics["Circle"]= statistics["Circle"]+1
+                statistics["Shape"] = statistics["Shape"]+1
+            else 
+                puts "Error: Invalid Circle"
+            end        
         end
     end
 end
