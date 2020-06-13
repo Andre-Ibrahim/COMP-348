@@ -23,7 +23,7 @@ class Circle < Shape
     attr_accessor :radius
     def initialize(radius)
         super()
-        if radius <=0 then
+        if radius <0 then
             puts "Error, Invalid circle"
             exit(1)
         end    
@@ -45,7 +45,7 @@ class Rectangle < Shape
     attr_accessor :height, :width
     def initialize(height, width)
         super()
-        if height<=0 || width<=0 then
+        if height<0 || width<0 then
             puts "Error, Invalid rectangle"
             exit(1)
         end 
@@ -53,7 +53,11 @@ class Rectangle < Shape
         @width = width
         @name="rectangle"
         @area= @height * @width
-        @perimeter= 2*@height + 2*@width
+        if(width == 0 || height == 0)
+            @perimeter = 0
+        else
+            @perimeter= 2*@height + 2*@width
+        end
     end
     
     def perimeter()
@@ -64,17 +68,17 @@ class Rectangle < Shape
     end
 end
 
-class Elipse < Shape
+class Ellipse < Shape
     attr_accessor :a, :b
     def initialize(a, b)
         super()
-        if a<=0 || b<=0 then
+        if a<0 || b<0 then
             puts "Error, Invalid elipse"
             exit(1)
         end 
         @a = a
         @b = b
-        @name="elipse"
+        @name="ellipse"
         @area= @a * @a * Math::PI
         @eccentricity = Math.sqrt(a**2 + b**2)
     end
@@ -91,23 +95,23 @@ class Elipse < Shape
 end
 
 
-x = Shape.new()
-x.print
-puts x.perimeter()
-puts x.area()
-u = Circle.new(5)
-u.print
-puts u.perimeter()
-puts u.area()
-r = Rectangle.new(5, 4.5)
-r.print
-puts r.perimeter()
-puts r.area()
-e = Elipse.new(3, 4)
-e.print
-puts e.perimeter()
-puts e.area()
-puts e.eccentricity
+# x = Shape.new()
+# x.print
+# puts x.perimeter()
+# puts x.area()
+# u = Circle.new(5)
+# u.print
+# puts u.perimeter()
+# puts u.area()
+# r = Rectangle.new(5, 4.5)
+# r.print
+# puts r.perimeter()
+# puts r.area()
+# e = Ellipse.new(3, 4)
+# e.print
+# puts e.perimeter()
+# puts e.area()
+# puts e.eccentricity
 
 
 
