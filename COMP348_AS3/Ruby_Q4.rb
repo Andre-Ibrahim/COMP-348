@@ -3,9 +3,9 @@ include Math
 class Shape
     attr_accessor :area, :name, :perimeter
     def initialize()
-        @area=0
+        @area="undefined"
         @name="Shape"
-        @perimeter=0
+        @perimeter="undefined"
     end
     
     def print()
@@ -23,6 +23,10 @@ class Circle < Shape
     attr_accessor :radius
     def initialize(radius)
         super()
+        if radius <=0 then
+            puts "Error, Invalid circle"
+            exit(1)
+        end    
         @radius=radius
         @name="circle"
         @area= @radius**2 *Math::PI
@@ -41,6 +45,10 @@ class Rectangle < Shape
     attr_accessor :height, :width
     def initialize(height, width)
         super()
+        if height<=0 || width<=0 then
+            puts "Error, Invalid rectangle"
+            exit(1)
+        end 
         @height = height
         @width = width
         @name="rectangle"
@@ -60,6 +68,10 @@ class Elipse < Shape
     attr_accessor :a, :b
     def initialize(a, b)
         super()
+        if a<=0 || b<=0 then
+            puts "Error, Invalid elipse"
+            exit(1)
+        end 
         @a = a
         @b = b
         @name="elipse"
@@ -87,7 +99,7 @@ u = Circle.new(5)
 u.print
 puts u.perimeter()
 puts u.area()
-r = Rectangle.new(5, 4)
+r = Rectangle.new(5, 4.5)
 r.print
 puts r.perimeter()
 puts r.area()
