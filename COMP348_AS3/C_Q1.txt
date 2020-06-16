@@ -5,15 +5,15 @@ CallFun(int *);
 int main(){
     int a = 3;
     
-    CallFun(&a);
+    CallFun(&a); /*Calling the function*/
     
-    printf("%d", a);
+    printf("%d", a); /*Printing the result*/
     
     return 0;
 }
 
 CallFun(int * a){
     
-    *a = 17;
+    *a = 17; /*Put in the adress of the pointer the value of 17*/
     
 }

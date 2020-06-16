@@ -1,36 +1,36 @@
 include Math
 
-class Shape
+class Shape # declaring a class called shape
     attr_accessor :area, :name, :perimeter
-    def initialize()
+    def initialize() # constructor method
         @area="undefined"
         @name="Shape"
         @perimeter="undefined"
     end
     
-    def print()
+    def print() # print method that will be inherited
         puts "The name of the shape is: "+@name+". The area is: "+@area.to_s+". The perimeter is: "+      @perimeter.to_s+"."
     end
-    def perimeter()
+    def perimeter() # getter method
         return nil
     end
     def area()
-        return nil
+        return nil # getter method
     end
 end
 
-class Circle < Shape
+class Circle < Shape #Circle inherits shape class
     attr_accessor :radius
     def initialize(radius)
-        super()
+        super() # calls super to make a shape
         if radius <0 then
             puts "Error, Invalid circle"
             exit(1)
         end    
         @radius=radius
         @name="circle"
-        @area= @radius**2 *Math::PI
-        @perimeter= @radius*2*Math::PI
+        @area= @radius**2 *Math::PI # new area calculation
+        @perimeter= @radius*2*Math::PI # new perimeter calculation
     end
     
     def perimeter()
@@ -41,11 +41,11 @@ class Circle < Shape
     end
 end
 
-class Rectangle < Shape
+class Rectangle < Shape # rectangle class inherits shape
     attr_accessor :height, :width
     def initialize(height, width)
         super()
-        if height<0 || width<0 then
+        if height<0 || width<0 then # makes sure height and width is valid
             puts "Error, Invalid rectangle"
             exit(1)
         end 
@@ -68,19 +68,19 @@ class Rectangle < Shape
     end
 end
 
-class Ellipse < Shape
+class Ellipse < Shape # elipse class inherits from shape
     attr_accessor :a, :b
     def initialize(a, b)
         super()
         if a<0 || b<0 then
-            puts "Error, Invalid elipse"
+            puts "Error, Invalid elipse" # makes sure it is a valid ellipse
             #exit(1)
         end 
         @a = a
         @b = b
         @name="ellipse"
         @area= @a * @a * Math::PI
-        @eccentricity = Math.sqrt(a**2 + b**2)
+        @eccentricity = Math.sqrt(a**2 + b**2) # new field called eccentricity
     end
     
     def perimeter()
@@ -89,7 +89,7 @@ class Ellipse < Shape
     def area()
         return @area
     end
-    def eccentricity()
+    def eccentricity() # getter for new method
         return @eccentricity
     end
 end

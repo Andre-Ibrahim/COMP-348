@@ -1,17 +1,17 @@
 
 #include <stdio.h>
-typedef struct {
+typedef struct {/*Declaring the book structure*/
     char * title;
     float price;
 }Book;
 
-Display(Book arr[], int size);
+Display(Book arr[], int size);/*Letting the program know this method is defined*/
 
 
 
-float AverageBookPrice(Book arr[], int size);
+float AverageBookPrice(Book arr[], int size);/*Letting the program know this method is defined*/
 
-void Add(Book * arr, int * size);
+void Add(Book * arr, int * size); /*Letting the program know this method is defined*/
 
 int main(){
     int x;
@@ -29,8 +29,8 @@ int main(){
         scanf("%f", &price);
         
         
-        Book temp = {&title, price};
-        arr[i] = temp;
+        Book temp = {&title, price};/*Creates a book with the given information*/
+        arr[i] = temp;/*Puts the books in an array*/
     }
     Display(arr, x);
     
@@ -47,7 +47,7 @@ int main(){
 }
 
 
-Display(Book * arr, int size){
+Display(Book * arr, int size){/*Display runs through array and prints the value inside each book*/
     for(int i = 0; i < size; i++){
         printf("Book %d ", (i + 1));
         printf("title: %s ", (arr + i)->title);
@@ -57,7 +57,7 @@ Display(Book * arr, int size){
 
 float AverageBookPrice(Book arr[], int size){
     float average = 0;
-    for(int i = 0; i < size; i++)
+    for(int i = 0; i < size; i++)/*Adds the price to an average and divides by number of entries at the end*/
         average += arr[i].price;
     return average/size;
 }

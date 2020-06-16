@@ -4,8 +4,8 @@ void swap(int*, int*);
 void DisplayArray(int [], int);
 
 int main(){
-    int arr[5] = {1,13,5,17,11};
-    DisplayArray(arr, 5);
+    int arr[5] = {1,13,5,17,11}; /*Decalre array*/
+    DisplayArray(arr, 5); /*Function calls*/
     selectionSort(arr, 5);
     DisplayArray(arr, 5);
     
@@ -15,20 +15,20 @@ void selectionSort(int arr[], int n)
 { 
     int indexOfMin; 
   
-    for (int i = 0; i < n-1; i++) 
+    for (int i = 0; i < n-1; i++) /*Simple selection sort algorithm*/
     { 
         indexOfMin = i; 
         for (int j = i+1; j < n; j++) 
           if (arr[j] < arr[indexOfMin]) 
             indexOfMin = j; 
   
-        swap(&arr[indexOfMin], &arr[i]); 
+        swap(&arr[indexOfMin], &arr[i]); /*To swap the postions, we call swap that takes two addresses*/
     } 
 }
 
 void swap(int *xp, int *yp) 
 { 
-    int temp = *xp; 
+    int temp = *xp; /*Swaps the numbers at the given adress*/
     *xp = *yp; 
     *yp = temp; 
 }
